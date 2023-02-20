@@ -1,0 +1,18 @@
+div {
+  text-align: center;
+  color: blue;
+}
+.button {
+  height: 30px;
+  width: 200px;
+  border-radius: 9px;
+  color: whitesmoke;
+  background-color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.task_Input {
+  height: 35px;
+  width: 250px;
+  border: 2px solid black;
+  border-radius: 20px;
+}
