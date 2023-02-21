@@ -1,13 +1,14 @@
 const taskModel=require("../models/taskModel")
-const fs=require('fs')
+
 
 const createTask=async(req,res)=>
 {
    let payload=
     {
-        task:req.body.task
+        task:await req.body.task
     }
     await taskModel.create(payload)
+    res.redirect("/tasks")
 }
 
 
@@ -34,6 +35,11 @@ const updateTask=async (req,res)=>{
   res.redirect("/tasks")
 
 }
+const deleteTask=async (req,res)=>{
+  await taskModel.deleteOne({_id:req.params.id})
+  res.redirect("/tasks")
+
+}
 
 
 module.exports={
@@ -41,5 +47,6 @@ module.exports={
     getTasks,
     getTask,
     updateTask,
+    deleteTask
     
 }

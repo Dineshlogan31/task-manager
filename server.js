@@ -18,7 +18,7 @@ app.use(methodOverride("_method"))
 
 app.use(express.json())
 mongoose.set('strictQuery', true)
-mongoose.connect(process.env.MONGODB_URI,(err)=>{
+mongoose.connect(process.env.MONGODB_URL,(err)=>{
     if(err) throw err
     console.log("db connected");
 })
