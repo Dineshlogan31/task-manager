@@ -2,25 +2,24 @@
 <div>
     <h1>Task ManageMent</h1>
     <form action="" method="post" enctype="application/x-www-form-urlencoded">
-        <input class="task_Input" type="text" name="task" ><br><br>
+        <input class="task_Input" type="text" name="task" placeholder="enter your task here" ><br><br>
         <button class="button" type="submit">Add a Task</button>
         <button class="button" type="reset">Clear A Task</button>
     </form>
-    <table 
-        border="2px">
+    <table border="2px" class="tableBlock" cellpadding="6px" cellspacing="5px">
     <tr>
-        <th>TASK</th>
-        <th>EDIT</th>
-        <th>DELETE</th>
+        <th>Task</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
 {{#each data}}
      <tr>
-        <td><h1>{{task}}</h1></td>
-        <td><a href="/tasks/{{_id}}">EDIT</a></td>
+        <td>{{task}}</td>
+        <td><a href="/tasks/{{_id}}"><i class="fa-sharp fa-regular fa-pen-to-square"></i></a></td>
         <td>
           <form action="/tasks/{{_id}}?_method=DELETE" method="post" enctype="application/x-www-form-urlencoded">
           <input type="hidden" name="_method" value="DELETE">
-          <button type="submit">DELETE</button>
+          <button type="submit"><i class="fa-solid fa-trash"></i></button>
           </form>
           </td>
       </tr>
